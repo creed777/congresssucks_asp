@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "congresssucks_asp", "congresssucks_asp\congresssucks_asp.csproj", "{16C0D7AC-9698-4641-AF7E-168A1072A9BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16C0D7AC-9698-4641-AF7E-168A1072A9BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16C0D7AC-9698-4641-AF7E-168A1072A9BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16C0D7AC-9698-4641-AF7E-168A1072A9BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16C0D7AC-9698-4641-AF7E-168A1072A9BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8FB51719-B392-4CBD-8771-134C66BAA253}
+	EndGlobalSection
+EndGlobal
