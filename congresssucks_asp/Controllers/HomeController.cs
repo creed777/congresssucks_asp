@@ -1,11 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using congresssucks_asp.Models;
-using congresssucks_asp.ViewModels;
-
 
 namespace congresssucks_asp.Controllers
 {
@@ -24,14 +23,14 @@ namespace congresssucks_asp.Controllers
 
         public ActionResult Index()
         {
-            var blog = _context.BlogPosts.FirstOrDefault();
+            IEnumerable<BlogPosts> Posts = _context.BlogPosts.Take(3).ToList();
+            return View(Posts);
+        }
 
-            var viewModel = new ViewModels.IndexViewModel()
-            {
-                Blog = blog
-            };
-
-            return View("Index",viewModel);
+        public ActionResult Article(int id)
+        {
+            var Article = _context.BlogPosts.Where(b => b.Id == id);
+            return View(Article);
         }
 
         public ActionResult About()

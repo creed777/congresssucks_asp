@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-@model congresssucks_asp.ViewModels.IndexViewModel
+@model IEnumerable<congresssucks_asp.Models.BlogPosts>
 @{
     ViewBag.Title = "BlogPosts";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -22,55 +22,23 @@
             <h2>Most Recent Posts</h2>
         </div>
         <div class="row">
-            <div class="col span-1-of-4 box">
-                <div class="blog-box">
-                    <h3>@Model.Blog.Title </h3>
-                    <div class="blog-date">@Model.Blog.Updated.ToShortDateString()</div>
-                    <p>
-                        @Model.Blog.ShortPost
-                    </p>
-                    <div class="btn-blog-section">
-                        <a href="/articles/why_electoral_college/why_electoral_college.html" class="btn btn-blog">Read More</a>
+            @foreach (var post in Model)
+            {
+                <div class="col span-1-of-4 box">
+                    <div class="blog-box">
+                        <h3>@post.Title </h3>
+                        <div class="blog-date">@post.Updated.ToShortDateString()</div>
+                        <p>
+                            @post.ShortPost
+                        </p>
+                        <div class="btn-blog-section">
+                            <a href="/articles/why_electoral_college/why_electoral_college.html" class="btn btn-blog">Read More</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col span-1-of-4 box">
-                <div class="blog-box">
-                    <h3>Second Column Span</h3>
-                    <div class="blog-date">Dec 1, 2018</div>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur ...
-                    </p>
-                    <div class="btn-blog-section">
-                        <a href="#" class="btn btn-blog">Read More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col span-1-of-4 box">
-                <div class="blog-box">
-                    <h3>Third Column Span</h3>
-                    <div class="blog-date">Oct 15, 2018</div>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur ...
-                    </p>
-                    <div class="btn-blog-section">
-                        <a href="#" class="btn btn-blog">Read More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col span-1-of-4 box">
-                <div class="blog-box">
-                    <h3>Fourth Column Span</h3>
-                    <div class="blog-date">Aug 23, 2018</div>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur ...
-                    </p>
-                    <div class="btn-blog-section">
-                        <a href="#" class="btn btn-blog">Read More</a>
-                    </div>
-                </div>
-            </div>
+            }
         </div>
+
     </section>
     <section>
         <div class="row">
