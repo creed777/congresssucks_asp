@@ -29,8 +29,16 @@ namespace congresssucks_asp.Controllers
 
         public ActionResult Article(int id)
         {
-            var Article = _context.BlogPosts.Where(b => b.Id == id);
-            return View(Article);
+            if (id == 0)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                var Article = _context.BlogPosts.Where(b => b.Id == id).FirstOrDefault();
+                return View(Article);
+            }    
+            
         }
 
         public ActionResult About()
