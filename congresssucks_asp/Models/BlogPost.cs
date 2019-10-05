@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace congresssucks_asp.Models
 {
@@ -12,8 +13,10 @@ namespace congresssucks_asp.Models
         [Required]
         public string Title { get; set; }
         [Required]
+        [AllowHtml]
         public string ShortPost { get; set; }
         [Required]
+        [AllowHtml]
         public string Post { get; set; }
         [Required]
         public string Tags { get; set; }
