@@ -21,6 +21,8 @@ namespace congresssucks_asp.Models
         [Required]
         public string Tags { get; set; }
         [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime Updated { get; set; }
     }
 }

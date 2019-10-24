@@ -1,4 +1,5 @@
-﻿@model congresssucks_asp.Models.BlogPosts
+﻿<!DOCTYPE html>
+@model congresssucks_asp.Models.BlogPosts
 
 @{
     ViewBag.Title = "Create";
@@ -12,31 +13,13 @@
     <link rel="stylesheet" type="text/css" href="~/Content/grid.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/style.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/queries.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Site.css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
     <meta charset="utf-8" />
     <script src='https://cdn.tiny.cloud/1/icpr326isrpeni57w7qb9kb3v0uszeqm0xiqsyvb4w8ypx2t/tinymce/5/tinymce.min.js' referrerpolicy="origin"></script>
-    <script type="text/javascript">
-        tinymce.init({
-            selector: "#LongPost",
-            width: 900,
-            height: 500
-        });
-    </script>
-    <script type="text/javascript">
-        function Short()
-        {
-            alert(tinymce.activeEditor.getContent())
-            var text = tinymce.activeEditor.getContent();
-            document.getElementById('ShortPost').value = text.substring(0, 100);
-        }
+    <script src='https://cdn.tiny.cloud/1/icpr326isrpeni57w7qb9kb3v0uszeqm0xiqsyvb4w8ypx2t/tinymce/5/tinymce.min.js' referrerpolicy="origin"></script>
+    <script src="../../Scripts/JavaScript.js" type="text/javascript"></script>
 
-        function UpdateDT()
-        {
-            //alert("fuckyou DT")
-            var dt = new Date()
-            document.getElementById('Update').value = dt.toLocaleDateString("en-US")
-        }
-    </script>
     <title>Congress Sucks!</title>
 </head>
 <body>
@@ -55,7 +38,7 @@
                             <div class="form-group">
                                 @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-10">
-                                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control create_textbox" } })
                                     @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -63,44 +46,40 @@
                             <div class="form-group">
                                 @Html.LabelFor(model => model.Post, htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-10">
-                                    @Html.TextAreaFor(model => model.Post, new { htmlAttributes = new { @class = "form-control" }, name="LongPost", id="LongPost" })
+                                    @Html.TextAreaFor(model => model.Post, new { htmlAttributes = new { @class = "form-control" }, name = "LongPost", id = "LongPost" })
                                     @Html.ValidationMessageFor(model => model.Post, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="form-group">
                                 @Html.LabelFor(model => model.Tags, htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-10">
-                                    @Html.EditorFor(model => model.Tags, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.Tags, new { htmlAttributes = new { @class = "form-control create_textbox" } })
                                     @Html.ValidationMessageFor(model => model.Tags, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="form-group">
                                 @*hidden fields are populated on Submit*@
                                 <div class="col-md-10">
-                                    @Html.HiddenFor(model => model.Updated, new { htmlAttributes = new { @class = "form-control" }, id="Update" })
-                                    @*Html.ValidationMessageFor(model => model.Updated, "", new { @class = "text-danger" })*@
-                                </div>
-                            </div>
-                                <div class="col-md-10">
-                                    @Html.HiddenFor(model => model.ShortPost, new { htmlAttributes = new { @class = "form-control" },  id="ShortPost" })
-                                    @*Html.ValidationMessageFor(model => model.ShortPost, "", new { @class = "text-danger" })*@
+                                    @Html.HiddenFor(model => model.Updated, new { htmlAttributes = new { @class = "form-control" }, id = "Update" })
+                                    @Html.HiddenFor(model => model.ShortPost, new { htmlAttributes = new { @class = "form-control" }, id = "ShortPost" })
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-md-offset-2 col-md-10">
+                                <div class="col-md-offset-2 col-md-10"><br /><br />
                                     <input type="submit" value="Create" class="btn btn-default" onclick="UpdateDT(), Short()" />
                                 </div>
+                            </div>                            
+                            <div>
+                                <br /><br /> @Html.ActionLink("Back to Article List", "Index")
                             </div>
-                    }
-                    <div>
-                        <br /><br /> @Html.ActionLink("Back to Article List", "Index")
-                    </div>
-                    @section Scripts {
-                        @Scripts.Render("~/bundles/jqueryval")
+                        </div>
                     }
                 </div>
             </div>
         </div>
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+            }
     </section>
 </body>
 </html>

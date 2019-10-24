@@ -25,7 +25,7 @@ body {
 */
 
 .row {
-    max-width: 1140px;
+    max-width: 1500px;
     margin: 0 auto;
 }
 
@@ -359,7 +359,7 @@ footer {
     background-color: #eee;
     width: 80%;
     float:none;
-    margin-left:10%;
+    margin: auto;
     margin-top:-200px;
     text-align:center;
     border: solid 1px;
@@ -369,7 +369,7 @@ footer {
     padding: 20px 10px;
 }
 
-.article-text-box li {
-    text-align:left;
-    margin-left:50px;
-}
+    .article-text-box li {
+        text-align: left;
+        margin-left: 50px;
+    }
