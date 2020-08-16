@@ -209,9 +209,22 @@
     <Compile Include="Migrations\201910031637353_AllowHtml.Designer.cs">
       <DependentUpon>201910031637353_AllowHtml.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910241946419_resource_table.cs" />
+    <Compile Include="Migrations\201910241946419_resource_table.Designer.cs">
+      <DependentUpon>201910241946419_resource_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910252011052_ResourceName.cs" />
+    <Compile Include="Migrations\201910252011052_ResourceName.Designer.cs">
+      <DependentUpon>201910252011052_ResourceName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910252030584_ResourceSeedData.cs" />
+    <Compile Include="Migrations\201910252030584_ResourceSeedData.Designer.cs">
+      <DependentUpon>201910252030584_ResourceSeedData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BlogPost.cs" />
+    <Compile Include="Models\ResourcesModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -416,6 +429,7 @@
     <Content Include="Scripts\tinymce\langs\readme.md" />
     <Content Include="Views\Shared\_footer.cshtml" />
     <Content Include="Views\Shared\_menu.cshtml" />
+    <Content Include="Views\Home\_Resources.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -440,6 +454,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910031637353_AllowHtml.resx">
       <DependentUpon>201910031637353_AllowHtml.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910241946419_resource_table.resx">
+      <DependentUpon>201910241946419_resource_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910252011052_ResourceName.resx">
+      <DependentUpon>201910252011052_ResourceName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910252030584_ResourceSeedData.resx">
+      <DependentUpon>201910252030584_ResourceSeedData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

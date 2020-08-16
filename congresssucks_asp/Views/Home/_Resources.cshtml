@@ -1,0 +1,16 @@
+﻿@model IEnumerable<congresssucks_asp.Models.Resources>
+
+<table class="resource_table">
+    
+    @foreach (var resource in Model)
+    {
+        <tr>
+            <td id="link">
+                <a href=@resource.Link target="_blank">@resource.Name</a><br />
+            </td>
+            <td>
+                @resource.Description
+            </td>
+        </tr>
+    }
+</table>

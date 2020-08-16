@@ -9,6 +9,7 @@ namespace congresssucks_asp.Models
 {
     public class BlogPosts
     {
+        public Resources Resources;
         public int Id { get; set; }
         [Required]
         public string Title { get; set; }

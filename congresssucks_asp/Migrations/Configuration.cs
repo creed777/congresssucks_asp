@@ -4,6 +4,7 @@ namespace congresssucks_asp.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using congresssucks_asp.Models;
 
     internal sealed class Configuration : DbMigrationsConfiguration<congresssucks_asp.Models.ApplicationDbContext>
     {
@@ -14,10 +15,7 @@ namespace congresssucks_asp.Migrations
 
         protected override void Seed(congresssucks_asp.Models.ApplicationDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data.
         }
     }
 }

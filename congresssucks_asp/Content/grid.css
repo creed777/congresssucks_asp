@@ -13,14 +13,14 @@
     zoom: 1; /* For IE 6/7 (trigger hasLayout) */
 }
 
-.row:before,
+/*.row:before,
 .row:after {
     content:"";
     display:table;
-}
-.row:after {
+}*/
+/*.row:after {
     clear:both;
-}
+}*/
 
 /*  GRID COLUMN SETUP   ==================================================================== */
 

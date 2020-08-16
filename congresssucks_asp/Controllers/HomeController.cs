@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections;
+﻿using congresssucks_asp.Models;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using congresssucks_asp.Models;
 
 namespace congresssucks_asp.Controllers
 {
@@ -23,8 +20,14 @@ namespace congresssucks_asp.Controllers
 
         public ActionResult Index()
         {
-            IEnumerable<BlogPosts> Posts = _context.BlogPosts.Take(3).ToList();
+            IEnumerable<BlogPosts> Posts = _context.BlogPosts.Take(4).OrderByDescending(b=>b.Updated).ToList();
             return View(Posts);
+        }
+
+        public ActionResult Resources()
+        {
+            IEnumerable<Resources> resources = _context.Resources;
+            return View(resources);
         }
 
         public ActionResult Article(int id)

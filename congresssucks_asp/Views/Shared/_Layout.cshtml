@@ -1,22 +1,38 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="~/Scripts/respond/src/respond.js"></script>
+    <script src="~/Scripts/html5shiv/src/html5shiv.js"></script>
+    <script src="~/Scripts/selectivizr/selectivizr.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
+    <script src="~/Scripts/script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="~/Content/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/grid.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/style.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/queries.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Site.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Congress Sucks!</title>
     @*Styles.Render("~/Content/css")*@
     @Scripts.Render("~/bundles/modernizr")
-
-</head>
-<body>
-        @Html.Partial("_Menu")
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        @Html.Partial("_footer")
-    </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+</head>
+
+<body>
+    @RenderPage("_menu.cshtml")
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    <div class="container body-content">
+        @RenderPage("_footer.cshtml")
+
+    </div>
 </body>
+
 </html>

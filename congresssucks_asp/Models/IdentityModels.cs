@@ -26,6 +26,7 @@ namespace congresssucks_asp.Models
         }
 
         public DbSet<BlogPosts> BlogPosts { get; set; }
+        public DbSet<Resources> Resources { get; set; }
 
         public static ApplicationDbContext Create()
         {
